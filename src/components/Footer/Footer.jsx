@@ -3,8 +3,8 @@ import styled from "styled-components";
 import { MdAlternateEmail } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import { HiOutlineMailOpen } from "react-icons/hi";
-import { AiFillGithub, AiFillLinkedin, AiOutlineArrowUp } from "react-icons/ai";
-import { BsFacebook, BsSlack } from "react-icons/bs";
+import { AiFillGithub, AiFillLinkedin, AiOutlineArrowUp,AiOutlineInstagram } from "react-icons/ai";
+// import { BsFacebook, BsSlack } from "react-icons/bs";
 import { FiMail, FiPhoneCall } from "react-icons/fi";
 import { Slide, Zoom, Fade } from "react-awesome-reveal";
 
@@ -19,14 +19,14 @@ const Footer = () => {
     <Container id="footer">
       <Profile>
         <Slide direction="left" delay={1}>
-          <h1>Portfolio</h1>
+          <h1>Contact</h1>
         </Slide>
         <div className="address">
           <Slide direction="left">
-            <h1>Address:</h1>
+            <h1>Current Address:</h1>
           </Slide>
           <Slide direction="left">
-            <p>1030 Southwood Dr San Luis Obispo, California(CA), 93401</p>
+            <p>Delhi ,India</p>
           </Slide>
         </div>
         <div className="links">
@@ -38,7 +38,7 @@ const Footer = () => {
               <FiPhoneCall />
             </span>
             <Slide direction="left">
-              <a href="tel:+4733378901">+47 333 78 901</a>
+              <a href="tel:+4733378901">+91 790 539 3284</a>
             </Slide>
           </div>
           <div>
@@ -48,7 +48,7 @@ const Footer = () => {
               </span>
             </Slide>
             <Slide>
-              <a href="mailto:miladamiri@gmail.com">miladamiri@gmail.com</a>
+              <a href="mailto:manvensingh07@gmail.com">manvensingh07@gmail.com</a>
             </Slide>
           </div>
         </div>
@@ -74,14 +74,7 @@ const Footer = () => {
             <Zoom>
               <span>
                 <a href="/">
-                  <BsFacebook />
-                </a>
-              </span>
-            </Zoom>
-            <Zoom>
-              <span>
-                <a href="/">
-                  <BsSlack />
+                  <AiOutlineInstagram />
                 </a>
               </span>
             </Zoom>
@@ -95,24 +88,24 @@ const Footer = () => {
       </Profile>
       <Form>
         <Slide direction="right">
-          <form>
+          <form action="https://getform.io/f/787e9cc2-0384-4cc0-bd40-cbdaa93919c8" method="POSt">
             <div className="name">
               <span>
                 <CgProfile />
               </span>
-              <input type="text" placeholder="Fullname..." />
+              <input type="text" placeholder="Fullname..." name="name" required/>
             </div>
             <div className="email">
               <span>
                 <MdAlternateEmail />
               </span>
-              <input type="email" placeholder="Email..." />
+              <input type="email" placeholder="Email..." name="email" required/>
             </div>
             <div className="message">
               <span className="messageIcon">
                 <FiMail />
               </span>
-              <textarea cols="30" rows="10" placeholder="Message..."></textarea>
+              <textarea cols="30" rows="10" placeholder="Message..." name="message" required></textarea>
             </div>
             <button>Submit</button>
           </form>

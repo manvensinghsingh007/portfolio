@@ -8,10 +8,10 @@ import { Slide } from "react-awesome-reveal";
 
 const Services = () => {
   return (
-    <Container id="service">
+    <Container id="skill">
       <Slide direction="down">
         <h4>
-          My <span className="green">services</span>
+          My <span className="green">skills</span>
         </h4>
         <h1>What I Do</h1>
       </Slide>
@@ -19,25 +19,22 @@ const Services = () => {
         <Slide direction="left">
           <Card
             Icon={MdDesignServices}
-            title={"ui/ux designer"}
-            disc={`Lorem ipsum dolor sit amet consectetur 
-                adipisicing elit. Commodi et asperiores cum exercitationem officia rem amet minus magnam? Cum, voluptatem?`}
+            title={"Frontend Developer"}
+            disc={`As a skilled frontend developer, I possess expertise in cutting-edge technologies such as React, Redux, and vanilla JavaScript. My hands-on experience in developing various web applications from scratch has honed my abilities in designing efficient and robust frontend architectures.`}
           />
         </Slide>
         <Slide direction="up">
           <Card
             Icon={FiCodesandbox}
-            title={"graphic designer"}
-            disc={`Lorem ipsum dolor sit amet consectetur 
-                adipisicing elit. Commodi et asperiores cum exercitationem officia rem amet minus magnam? Cum, voluptatem?`}
+            title={"Back-end Developer"}
+            disc={`I have a deep understanding of back-end technologies such as Express for efficient server creation and developing REST APIs. My proficiency in both SQL and NoSQL databases, particularly MongoDB, has allowed me to build powerful and scalable back-end architectures.`}
           />
         </Slide>
         <Slide direction="right">
           <Card
             Icon={CgWebsite}
-            title={"web designer"}
-            disc={`Lorem ipsum dolor sit amet consectetur 
-                adipisicing elit. Commodi et asperiores cum exercitationem officia rem amet minus magnam? Cum, voluptatem?`}
+            title={"FullStack Developer"}
+            disc={`As an advanced frontend developer, I have developed multiple full stack projects using the MERN (MongoDB, Express.js, React, and Node.js) stack from the ground up. My expertise lies in crafting complex logical operations and implementing efficient solutions to create high-performance full stack applications.`}
           />
         </Slide>
       </Cards>

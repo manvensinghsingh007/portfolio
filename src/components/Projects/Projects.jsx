@@ -21,7 +21,7 @@ const Projects = () => {
 export default Projects;
 
 const Container = styled.div`
-    width: 80%;
+    width: 100%;
     max-width: 1280px;
     margin: 0 auto;
     padding: 3rem 0;

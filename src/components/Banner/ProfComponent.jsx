@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { AiOutlineInstagram } from "react-icons/ai";
-import { GiEarthAmerica } from "react-icons/gi";
+import { AiOutlineInstagram,AiFillGithub } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 import { Slide } from "react-awesome-reveal";
+import myimg from './banner.png'
 
 const ProfComponent = () => {
   return (
@@ -13,14 +13,23 @@ const ProfComponent = () => {
           <h4>
             Hello <span className="green">I'am</span>
           </h4>
-          <h1 className="green">Milad Amiri</h1>
-          <h3>UX/UI Designer and graphic designer</h3>
+          <h1 className="green">Manvendra Singh</h1>
+          <h3>Full-stack Developer</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores,
-            iusto. Adipisci in qui officia provident tenetur sequi, deserunt
-            corporis quos?
+          "I'm a full-stack developer bursting with passion! With over a year of industry experience working in the <span className="green">MERN stack</span>,
+           I'm constantly fueled by the thrill of programming. From tinkering with personal projects to collaborating with the industry's finest minds,
+          I count myself extremely fortunate to be a part of this dynamic community. Take a look at my impressive body of work and I'm confident you'll agree
+          that I'm one of the top candidates for this position. Please don't miss the opportunity to <span className="green">interview me and discover</span> what I can bring to the table!"
           </p>
-          <button>Let's talk</button>
+          <a href="#footer" style={{textDecoration:'none',color:'white'}}>
+            <button>Interview me</button>
+          </a>
+          <a href="https://drive.google.com/file/d/1fg7zN0b-NZLWvtHN-Ha4crrjljjvR_Gf/view?usp=share_link" download='Resume'
+            style={{textDecoration:'none',color:'#01be96'}}
+            target="_blank"
+            rel="noreferrer">
+             <span className="resume">Resume</span> 
+          </a>
           <Social>
             <p>Check out my</p>
             <div className="social-icons">
@@ -31,12 +40,12 @@ const ProfComponent = () => {
               </span>
               <span>
                 <a href="/">
-                  <GiEarthAmerica />
+                  <FaLinkedinIn />
                 </a>
               </span>
               <span>
                 <a href="/">
-                  <FaLinkedinIn />
+                  <AiFillGithub />
                 </a>
               </span>
             </div>
@@ -46,7 +55,7 @@ const ProfComponent = () => {
       <Slide direction="right">
         <Profile>
           <img
-            src="https://res.cloudinary.com/ghazni/image/upload/v1659082282/Yt-portfolio/Untitled-1_drcspz.png"
+            src={myimg}
             alt="profile"
           />
         </Profile>
@@ -107,6 +116,20 @@ const Texts = styled.div`
       filter: drop-shadow(0px 10px 10px #01be9570);
     }
   }
+
+  .resume{
+    padding: 0.6rem 1.5rem;
+    margin-top: 3rem;
+    margin-left:2rem;
+    border: 1px solid #01be96;
+    cursor:pointer;
+    font-weight: 700;
+    background-color: none;
+    box-shadow: 0 0 10px 3px #01be9570;
+    :hover {
+      filter: drop-shadow(0px 10px 10px #01be9570);
+    }
+  }
 `;
 const Social = styled.div`
   margin-top: 3rem;
@@ -147,7 +170,8 @@ const Social = styled.div`
 `;
 const Profile = styled.div`
   img {
-    width: 25rem;
+    width: 27rem;
+    transform: scale(1.2);
     filter: drop-shadow(0px 10px 10px #01be9570);
     transition: transform 400ms ease-in-out;
     @media (max-width: 790px) {
@@ -164,6 +188,6 @@ const Profile = styled.div`
   }
 
   :hover img {
-    transform: translateY(-10px);
+    transform: scale(1.1);
   }
 `;

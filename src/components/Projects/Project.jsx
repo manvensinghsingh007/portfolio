@@ -19,11 +19,12 @@ const Project = (props) => {
 export default Project;
 
 const Container = styled.div`
-    height: 10rem;
-    background-color: #4e5156;
+    height: 15rem;
+    width:100%;
+    // background-color: #4e5156;
     margin: 0 0.5rem;
     padding: 0.5rem;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     position: relative;
     overflow: hidden;
@@ -39,7 +40,7 @@ const Container = styled.div`
         left: 0;
         bottom: -10rem;
         text-align: left;
-        padding: 0.5rem;
+        padding: 0.7rem;
         background: linear-gradient(rgba(0,0,0, 0.100), rgba(0,0,0, 0.80));
         transition: all 400ms ease-in-out;
         h1{
@@ -48,7 +49,7 @@ const Container = styled.div`
     
         p{
             width: 90%;
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             a{
                 margin-left: 0.4rem;
                 color: red;
@@ -57,7 +58,7 @@ const Container = styled.div`
     }
 
     :hover > img{
-        transform: scale(1.3);
+        transform: scale(1.1);
     }
 
     :hover > .disc{
