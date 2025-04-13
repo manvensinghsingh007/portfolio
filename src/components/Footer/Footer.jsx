@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { MdAlternateEmail } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import { HiOutlineMailOpen } from "react-icons/hi";
-import { AiFillGithub, AiFillLinkedin, AiOutlineArrowUp,AiOutlineInstagram } from "react-icons/ai";
+import {
+  AiFillGithub,
+  AiFillLinkedin,
+  AiOutlineArrowUp,
+  AiOutlineInstagram,
+} from "react-icons/ai";
 // import { BsFacebook, BsSlack } from "react-icons/bs";
 import { FiMail, FiPhoneCall } from "react-icons/fi";
 import { Slide, Zoom, Fade } from "react-awesome-reveal";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Footer = () => {
   const scrollUp = () => {
@@ -15,8 +22,46 @@ const Footer = () => {
       behavior: "smooth",
     });
   };
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const form = e.target;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: formData,
+      });
+
+      if (response.ok) {
+        form.reset();
+        toast.success(
+          "Thank you for reaching out! I will get back to you shortly.",
+          {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+          }
+        );
+      } else {
+        toast.error("Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      toast.error("Failed to send message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   return (
     <Container id="footer">
+      <ToastContainer />
       <Profile>
         <Slide direction="left" delay={1}>
           <h1>Contact</h1>
@@ -48,7 +93,9 @@ const Footer = () => {
               </span>
             </Slide>
             <Slide>
-              <a href="mailto:manvensingh07@gmail.com">manvensingh07@gmail.com</a>
+              <a href="mailto:manvensingh07@gmail.com">
+                manvensingh07@gmail.com
+              </a>
             </Slide>
           </div>
         </div>
@@ -59,22 +106,21 @@ const Footer = () => {
           <div className="icons">
             <Zoom>
               <span>
-                <a href="/">
+                <a
+                  href="https://github.com/manvensinghsingh007"
+                  target="_blank"
+                >
                   <AiFillGithub />
                 </a>
               </span>
             </Zoom>
             <Zoom>
               <span>
-                <a href="/">
+                <a
+                  href="https://www.linkedin.com/in/manvendra-singh07/"
+                  target="_blank"
+                >
                   <AiFillLinkedin />
-                </a>
-              </span>
-            </Zoom>
-            <Zoom>
-              <span>
-                <a href="/">
-                  <AiOutlineInstagram />
                 </a>
               </span>
             </Zoom>
@@ -88,26 +134,48 @@ const Footer = () => {
       </Profile>
       <Form>
         <Slide direction="right">
-          <form action="https://getform.io/f/787e9cc2-0384-4cc0-bd40-cbdaa93919c8" method="POSt">
+          <form
+            action="https://getform.io/f/787e9cc2-0384-4cc0-bd40-cbdaa93919c8"
+            method="POST"
+            onSubmit={handleSubmit}
+          >
             <div className="name">
               <span>
                 <CgProfile />
               </span>
-              <input type="text" placeholder="Fullname..." name="name" required/>
+              <input
+                type="text"
+                placeholder="Fullname..."
+                name="name"
+                required
+              />
             </div>
             <div className="email">
               <span>
                 <MdAlternateEmail />
               </span>
-              <input type="email" placeholder="Email..." name="email" required/>
+              <input
+                type="email"
+                placeholder="Email..."
+                name="email"
+                required
+              />
             </div>
             <div className="message">
               <span className="messageIcon">
                 <FiMail />
               </span>
-              <textarea cols="30" rows="10" placeholder="Message..." name="message" required></textarea>
+              <textarea
+                cols="30"
+                rows="10"
+                placeholder="Message..."
+                name="message"
+                required
+              ></textarea>
             </div>
-            <button>Submit</button>
+            <button disabled={isSubmitting}>
+              {isSubmitting ? "Sending..." : "Submit"}
+            </button>
           </form>
         </Slide>
       </Form>
@@ -126,6 +194,18 @@ const Container = styled.div`
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  .Toastify__toast {
+    background-color: #191923;
+    color: #fff;
+  }
+
+  .Toastify__toast--success {
+    border-left: 4px solid #01be96;
+  }
+
+  .Toastify__toast--error {
+    border-left: 4px solid #ff4444;
+  }
   @media (max-width: 840px) {
     width: 90%;
   }

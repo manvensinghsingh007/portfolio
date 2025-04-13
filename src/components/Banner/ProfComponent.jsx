@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { AiOutlineInstagram,AiFillGithub } from "react-icons/ai";
+import { AiOutlineInstagram, AiFillGithub } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 import { Slide } from "react-awesome-reveal";
-import myimg from './banner.png'
+const myimg =
+  "https://ucarecdn.com/0a7f9311-5f0d-4cbd-87df-b9c19014519b/-/preview/657x660/";
 
 const ProfComponent = () => {
   return (
@@ -14,37 +15,53 @@ const ProfComponent = () => {
             Hello <span className="green">I'am</span>
           </h4>
           <h1 className="green">Manvendra Singh</h1>
-          <h3>Full-stack Developer</h3>
+          <h3>Software Developer</h3>
           <p>
-          "I'm a full-stack developer bursting with passion! With over a year of industry experience working in the <span className="green">MERN stack</span>,
-           I'm constantly fueled by the thrill of programming. From tinkering with personal projects to collaborating with the industry's finest minds,
-          I count myself extremely fortunate to be a part of this dynamic community. Take a look at my impressive body of work and I'm confident you'll agree
-          that I'm one of the top candidates for this position. Please don't miss the opportunity to <span className="green">interview me and discover</span> what I can bring to the table!"
+            "I'm a full-stack developer bursting with passion! With over{" "}
+            <span className="green">3 year</span> of industry experience working
+            in the <span className="green">MERN stack</span>, I'm constantly
+            fueled by the thrill of programming. From tinkering with personal
+            projects to collaborating with the industry's finest minds, I count
+            myself extremely fortunate to be a part of this dynamic community.
+            Take a look at my impressive body of work and I'm confident you'll
+            agree that I'm one of the top candidates for this position. Please
+            don't miss the opportunity to{" "}
+            <span className="green">interview me and discover</span> what I can
+            bring to the table!"
           </p>
-          <a href="#footer" style={{textDecoration:'none',color:'white'}}>
+          <a href="#footer" style={{ textDecoration: "none", color: "white" }}>
             <button>Interview me</button>
           </a>
-          <a href="https://drive.google.com/file/d/1fg7zN0b-NZLWvtHN-Ha4crrjljjvR_Gf/view?usp=share_link" download='Resume'
-            style={{textDecoration:'none',color:'#01be96'}}
+          <a
+            href="https://drive.google.com/file/d/1JPgYh1lxH691WJkFJcpr0w8ZX_Al3jeb/view?usp=sharing"
+            download="Resume"
+            style={{ textDecoration: "none", color: "#01be96" }}
             target="_blank"
-            rel="noreferrer">
-             <span className="resume">Resume</span> 
+            rel="noreferrer"
+          >
+            <span className="resume">Resume</span>
           </a>
           <Social>
             <p>Check out my</p>
             <div className="social-icons">
-              <span>
+              {/* <span>
                 <a href="/">
                   <AiOutlineInstagram />
                 </a>
-              </span>
+              </span> */}
               <span>
-                <a href="/">
+                <a
+                  href="https://www.linkedin.com/in/manvendra-singh07/"
+                  target="_blank"
+                >
                   <FaLinkedinIn />
                 </a>
               </span>
               <span>
-                <a href="/">
+                <a
+                  href="https://github.com/manvensinghsingh007"
+                  target="_blank"
+                >
                   <AiFillGithub />
                 </a>
               </span>
@@ -54,10 +71,7 @@ const ProfComponent = () => {
       </Slide>
       <Slide direction="right">
         <Profile>
-          <img
-            src={myimg}
-            alt="profile"
-          />
+          <img src={myimg} alt="profile" />
         </Profile>
       </Slide>
     </Container>
@@ -74,6 +88,8 @@ const Container = styled.div`
   max-width: 1280px;
   margin: 0 auto;
   z-index: 1;
+  align-items: center;
+  height: 70%;
   @media (max-width: 840px) {
     width: 90%;
   }
@@ -117,12 +133,12 @@ const Texts = styled.div`
     }
   }
 
-  .resume{
+  .resume {
     padding: 0.6rem 1.5rem;
     margin-top: 3rem;
-    margin-left:2rem;
+    margin-left: 2rem;
     border: 1px solid #01be96;
-    cursor:pointer;
+    cursor: pointer;
     font-weight: 700;
     background-color: none;
     box-shadow: 0 0 10px 3px #01be9570;
